@@ -67,3 +67,5 @@ gem "devise", "~> 4.9"
 gem "bootstrap", "~> 5.3"
 
 gem "sassc-rails", "~> 2.1"
+
+gem "aasm", "~> 5.5"

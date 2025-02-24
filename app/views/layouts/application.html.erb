@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= content_for(:title) || "Homey Assessment Project History" %></title>
+    <title><%= content_for(:title) || "Homey Project History" %></title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
@@ -23,6 +23,24 @@
   </head>
 
   <body>
-    <%= yield %>
+    <nav style="display: flex; justify-content: space-between; align-items: center; padding: 10px; background: #f8f9fa; border-bottom: 1px solid #ddd;">
+      <div>
+        <%= link_to "Homey Project History", root_path, style: "font-weight: bold; text-decoration: none; color: #333;" %>
+      </div>
+      
+      <div>
+        <% if user_signed_in? %>
+          <span style="margin-right: 15px;">Welcome, <%= current_user.email %></span>
+          <%= link_to "Sign Out", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, style: "background: red; color: white; padding: 8px 12px; border-radius: 5px; text-decoration: none;" %>
+        <% else %>
+          <%= link_to "Sign In", new_user_session_path, style: "margin-right: 10px; text-decoration: none; color: #333;" %>
+          <%= link_to "Sign Up", new_user_registration_path, class: "btn btn-primary"%>
+        <% end %>
+      </div>
+    </nav>
+
+    <div style="padding: 20px;">
+      <%= yield %>
+    </div>
   </body>
 </html>

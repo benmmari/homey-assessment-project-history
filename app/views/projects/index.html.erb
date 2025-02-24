@@ -1,16 +1,33 @@
-<p style="color: green"><%= notice %></p>
+<%# Flash Messages %>
+<% if notice %>
+  <div class="alert alert-success"><%= notice %></div>
+<% end %>
 
 <% content_for :title, "Projects" %>
 
-<h1>Projects</h1>
+<div class="container mt-4">
+  <h1 class="mb-4">My Projects</h1>
 
-<div id="projects">
-  <% @projects.each do |project| %>
-    <%= render project %>
-    <p>
-      <%= link_to "Show this project", project %>
-    </p>
+  <% if @projects.any? %>
+    <div class="row">
+      <% @projects.each do |project| %>
+        <div class="col-md-4">
+          <div class="card mb-3 shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title"><%= link_to project.title, project, class: "text-primary" %></h5>
+              <p class="card-text"><%= truncate(project.description, length: 100) %></p>
+              <p>Status: <%= project.status %></p>
+              <p class="text-muted small">
+                Created: <%= project.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+              </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% else %>
+    <p class="text-muted">No projects yet.</p>
   <% end %>
-</div>
 
-<%= link_to "New project", new_project_path %>
+  <%= link_to "New Project", new_project_path, class: "btn btn-success mt-3" %>
+</div>
