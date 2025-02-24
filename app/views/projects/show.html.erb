@@ -44,6 +44,24 @@
       <% end %>
       <hr class="my-4">
 
+      <h3>Project Status History</h3>
+      <div class="list-group mt-3">
+        <% @project.audits.each do |audit| %>
+          <div class="list-group-item">
+            <p>
+              <% status_changes = audit.audited_changes["status"] %>
+              <% from_status, to_status = status_changes.is_a?(Array) ? status_changes : ["N/A", status_changes] %>
+              
+              <strong>Status changed from:</strong> <%= from_status %>
+              <strong>to</strong> <%= to_status %>
+            </p>
+            <p class="text-muted">
+              Updated by <%= audit.user&.email || "Unknown" %> on <%= audit.created_at.strftime("%B %d, %Y at %I:%M %p") %>
+            </p>
+          </div>
+        <% end %>
+      </div>
+    </div>
     <div class="mt-3">
       <%= link_to "Back to projects", projects_path, class: "btn btn-outline-secondary" %>
     </div>
