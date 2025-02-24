@@ -81,6 +81,7 @@ test:
 production:
   primary: &primary_production
     <<: *default
+    url: <%= ENV['HOMEY_ASSESSMENT_PROJECT_HISTORY_DATABASE_URL'] %>
     database: homey_assessment_project_history_production
     username: homey_assessment_project_history
     password: <%= ENV["HOMEY_ASSESSMENT_PROJECT_HISTORY_DATABASE_PASSWORD"] %>
