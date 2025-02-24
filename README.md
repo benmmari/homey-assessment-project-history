@@ -1,24 +1,33 @@
-# README
+# Homey Project History
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A **Ruby on Rails** application that allows users to **manage projects**, **track status changes**, and **comment on projects**.
 
-Things you may want to cover:
+---
 
-* Ruby version
+Hosted on https://homey-assessment-project-history.onrender.com/
 
-* System dependencies
+---
 
-* Configuration
+## 📋 Features
+ 1. User Authentication
+ 2. Create, Edit, Delete Projects
+ 3. Project State Management
+ 4. Comments on Projects
+ 5. Soft Delete for Projects
+ 6. Audit Trail for Status Changes
+ 7. Responsive UI with Bootstrap
 
-* Database creation
+---
 
-* Database initialization
+## 🛠 Setup Instructions
 
-* How to run the test suite
+```sh
+git clone git@github.com:benmmari/homey-assessment-project-history.git
+bundle install
+rails db:create
+rails db:migrate
+rails s
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
-
-* ...
+App will be available at: http://localhost:3000
+```
