@@ -2,6 +2,9 @@ require "application_system_test_case"
 
 class ProjectsTest < ApplicationSystemTestCase
   setup do
+    @user = users(:one)
+    sign_in @user 
+
     @project = projects(:one)
   end
 
