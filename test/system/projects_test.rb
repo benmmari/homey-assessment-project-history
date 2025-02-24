@@ -15,7 +15,7 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "New project"
 
     fill_in "Description", with: @project.description
-    fill_in "String", with: @project.string
+    fill_in "Status", with: @project.status
     fill_in "Title", with: @project.title
     fill_in "User", with: @project.user_id
     click_on "Create Project"
@@ -29,7 +29,7 @@ class ProjectsTest < ApplicationSystemTestCase
     click_on "Edit this project", match: :first
 
     fill_in "Description", with: @project.description
-    fill_in "String", with: @project.string
+    fill_in "Status", with: @project.status
     fill_in "Title", with: @project.title
     fill_in "User", with: @project.user_id
     click_on "Update Project"

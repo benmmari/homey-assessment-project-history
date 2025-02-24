@@ -3,11 +3,11 @@
 one:
   title: MyString
   description: MyText
-  string: MyText
+  status: pending
   user: one
 
 two:
   title: MyString
   description: MyText
-  string: MyText
+  status: pending
   user: two
