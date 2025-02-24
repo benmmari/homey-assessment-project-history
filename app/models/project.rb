@@ -1,4 +1,5 @@
 class Project < ApplicationRecord
+  acts_as_paranoid
   audited only: [:status], associated_with: :user
 
   belongs_to :user

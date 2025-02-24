@@ -16,7 +16,7 @@
             <div class="card-body">
               <h5 class="card-title"><%= link_to project.title, project, class: "text-primary" %></h5>
               <p class="card-text"><%= truncate(project.description, length: 100) %></p>
-              <p>Status: <%= project.status %></p>
+              <p>Status: <%= status_label(project.status) %></p>
               <p class="text-muted small">
                 Created: <%= project.created_at.strftime("%B %d, %Y at %I:%M %p") %>
               </p>

@@ -71,3 +71,5 @@ gem "sassc-rails", "~> 2.1"
 gem "aasm", "~> 5.5"
 
 gem "audited", "~> 5.8"
+
+gem "acts_as_paranoid", "~> 0.10.3"
