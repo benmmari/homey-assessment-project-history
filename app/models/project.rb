@@ -1,4 +1,6 @@
 class Project < ApplicationRecord
+  audited only: [:status], associated_with: :user
+
   belongs_to :user
   has_many :comments, dependent: :destroy
 
